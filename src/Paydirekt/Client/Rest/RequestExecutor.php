@@ -30,6 +30,8 @@ final class RequestExecutor
             //TODO: implement correct error handling procedure
             $message = ($responseCode > 0 ? "Unexpected status code " .$responseCode .": " .$response : "");
             $message .= (curl_error($request) ? curl_error($request) : "");
+            $message .= " Request-URL: ".curl_getinfo($request, CURLINFO_EFFECTIVE_URL);
+            $message .= " Request-Header: ".curl_getinfo($request, CURLINFO_HEADER_OUT);
             throw new \RuntimeException($message);
         }
 
