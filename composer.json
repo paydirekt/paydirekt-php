@@ -20,7 +20,7 @@
 	},
 	"autoload": {
 		"psr-4": {
-			"Paydirekt\\Client\\": "src/Paydirekt/Client/"
+			"Paydirekt\\Client\\": ["src/Paydirekt/Client/", "test/Paydirekt/Client/"]
 		}
 	},
 	"scripts": {
