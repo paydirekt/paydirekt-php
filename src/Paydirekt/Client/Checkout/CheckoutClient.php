@@ -50,6 +50,7 @@ class CheckoutClient
         $request = RequestBuilderFactory::newPostRequestBuilder($this->checkoutEndpoint)
             ->withEntity($checkoutRequest)
             ->withStandardHeaders($accessToken)
+            ->withEntity('')
             ->build();
         return RequestExecutor::executeRequest($request, true);
     }
