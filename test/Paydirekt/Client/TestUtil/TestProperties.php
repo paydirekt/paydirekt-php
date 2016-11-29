@@ -13,5 +13,4 @@ final class TestProperties
     const TEST_USER_NAME = 'github_testuser';
     const TEST_USER_HASHED_PW = 'PHHrLCitIr3f7m7PFZbdxtmvirHhbJtch_XqUaSTXRrXWdIYBjfgpRA2ICM6qY7s';
     const TEST_USER_BASIC_AUTH_HEADER = 'Basic YnYtY2hlY2tvdXQtd2ViOjhjZEtIZVJ3eDNVNHI3WTlvQ0JkZ1A1OW5DdmNHTWRMa0NmQVNXdVZDdm8=';
-
 }
