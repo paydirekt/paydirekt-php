@@ -42,5 +42,4 @@ class ClientsFactory
         return new CheckoutClient(EndpointConfiguration::SANDBOX_CHECKOUT_ENDPOINT);
     }
 
-
 }
