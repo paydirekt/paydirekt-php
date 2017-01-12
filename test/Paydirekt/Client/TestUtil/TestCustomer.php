@@ -53,6 +53,7 @@ class TestCustomer
         $requestBuilder = RequestBuilderFactory::newPostRequestBuilder($confirmUrl);
         $request = $requestBuilder->withStandardHeaders($accessToken)
             ->withCAFile(EndpointConfiguration::getCaFile())
+            ->withEntity('')
             ->build();
 
         RequestExecutor::executeRequest($request, false);

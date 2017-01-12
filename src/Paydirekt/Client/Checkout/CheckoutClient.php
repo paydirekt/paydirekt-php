@@ -82,6 +82,7 @@ class CheckoutClient
         $closeCheckoutUrl = self::getCloseEndpoint($checkout);
         $request = RequestBuilderFactory::newPostRequestBuilder($closeCheckoutUrl)
             ->withStandardHeaders($accessToken)
+            ->withEntity('')
             ->build();
         return RequestExecutor::executeRequest($request, true);
     }
