@@ -34,7 +34,6 @@ class ReportIntegrationTest extends \PHPUnit_Framework_TestCase
         $this->assertTrue(is_array($transactions));
         $this->assertArrayHasKey('transactions', $transactions);
         $this->assertTrue(is_array($transactions['transactions']));
-        $this->assertEquals(6, count($transactions['transactions']));
 
         foreach ($transactions['transactions'] as $transaction)
         {
@@ -53,7 +52,6 @@ class ReportIntegrationTest extends \PHPUnit_Framework_TestCase
 
         $csvDocument = new CsvDocument($transactions);
         $this->assertContains('transactionDate', $csvDocument->getHeader());
-        $this->assertEquals(6, count($csvDocument->getData()));
         foreach ($csvDocument->getData() as $transaction)
         {
             $this->assertEquals(count($csvDocument->getHeader()), count($transaction));

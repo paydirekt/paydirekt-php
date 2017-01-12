@@ -28,6 +28,9 @@ class RequestBuilderFactory implements GetRequestBuilder, PostRequestBuilder
         if ($isPost)
         {
             curl_setopt($this->request, CURLOPT_POST, 1);
+            //set default request body to empty string
+            //not setting bodies for POST requests at all leads to failures with some curl versions
+            $this->withEntity('');
         }
     }
 
