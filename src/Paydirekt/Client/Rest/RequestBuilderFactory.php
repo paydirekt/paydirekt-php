@@ -68,6 +68,7 @@ class RequestBuilderFactory implements GetRequestBuilder, PostRequestBuilder
         array_push($header, "Content-Type: application/hal+json;charset=utf-8");
         array_push($header, "Accept: application/hal+json");
         array_push($header, "Authorization: Bearer " . $accessToken);
+        array_push($header, "User-Agent: Mozilla/5.0");
 
         curl_setopt($this->request, CURLOPT_HTTPHEADER, $header);
         return $this;

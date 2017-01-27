@@ -74,7 +74,8 @@ class TestCustomer
         $request = $requestBuilder->withHeader(array(
             'Authorization: ' . TestProperties::TEST_USER_BASIC_AUTH_HEADER,
             'Content-Type: application/hal+json;charset=utf-8',
-            'Accept: application/hal+json'
+            'Accept: application/hal+json',
+            'User-Agent: Mozilla/5.0'
         ))->withEntity(json_encode(array(
             'processId' => $checkoutId,
             'password' => TestProperties::TEST_USER_HASHED_PW,
