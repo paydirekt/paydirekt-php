@@ -84,6 +84,12 @@ class HmacValidationTest extends \PHPUnit_Framework_TestCase
         $this->setExpectedException("InvalidArgumentException");
         $this->invokePrivateStaticHmacMethod("validateApiSecret", "GJlN718sQxN1unxb/WHVlcf0FgXw2kMyfRwD0mgTRME=");
     }
+    
+    public function testThatApiSecretIsInvalidWhenTooShort()
+    {
+        $this->setExpectedException("InvalidArgumentException");
+        $this->invokePrivateStaticHmacMethod("validateApiSecret", "string-is-under32characterslong");
+    }
 
     public function testThatRequestIdIsValid()
     {
