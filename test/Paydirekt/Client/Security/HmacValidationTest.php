@@ -35,10 +35,8 @@ class HmacValidationTest extends \PHPUnit_Framework_TestCase
 
     public function testThatNonceIsInvalidWhenTooLong()
     {
-        $string = substr(str_shuffle("123456789"), 0, 65);
-
         $this->setExpectedException("InvalidArgumentException");
-        $this->invokePrivateStaticHmacMethod("validateNonce", $string);
+        $this->invokePrivateStaticHmacMethod("validateNonce", "-this-string-is-65-characters-long-and-base-64-valid-for-testing-");
     }
 
     public function testThatApiKeyIsValid()
@@ -85,6 +83,12 @@ class HmacValidationTest extends \PHPUnit_Framework_TestCase
     {
         $this->setExpectedException("InvalidArgumentException");
         $this->invokePrivateStaticHmacMethod("validateApiSecret", "GJlN718sQxN1unxb/WHVlcf0FgXw2kMyfRwD0mgTRME=");
+    }
+    
+    public function testThatApiSecretIsInvalidWhenTooShort()
+    {
+        $this->setExpectedException("InvalidArgumentException");
+        $this->invokePrivateStaticHmacMethod("validateApiSecret", "string-is-under32characterslong");
     }
 
     public function testThatRequestIdIsValid()

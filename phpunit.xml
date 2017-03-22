@@ -19,4 +19,12 @@
     <logging>
         <log type="junit" target="build/testresults/phpunit.xml" logIncompleteSkipped="false"/>
     </logging>
+    <filter>
+        <whitelist>
+            <directory>src</directory>
+            <exclude>
+                <directory>test</directory>
+            </exclude>
+        </whitelist>
+    </filter>
 </phpunit>
