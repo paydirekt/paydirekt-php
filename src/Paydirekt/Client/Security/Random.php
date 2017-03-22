@@ -38,14 +38,6 @@ final class Random
             throw new \BadFunctionCallException("unable to call function random_bytes");
         }
 
-        try {
-            $bytes = random_bytes($length);
-        } catch (\Error $e) {
-            throw new \RuntimeException("unable to generate a cryptographically strong result");
-        } catch (\Exception $e) {
-            throw new \RuntimeException("unable to generate a cryptographically strong result");
-        }
-
-        return $bytes;
+        return random_bytes($length);
     }
 }
