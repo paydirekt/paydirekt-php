@@ -19,12 +19,12 @@ class RandomTest extends \PHPUnit_Framework_TestCase
 {
     public function setUp()
     {
-        self::resetFunctionExistsMock();
+        $this->resetFunctionExistsMock();
     }
 
     public function tearDown()
     {
-        self::resetFunctionExistsMock();
+        $this->resetFunctionExistsMock();
     }
 
     public function testThatRandomPseudoBytesAreGeneratedWithCorrectSize()

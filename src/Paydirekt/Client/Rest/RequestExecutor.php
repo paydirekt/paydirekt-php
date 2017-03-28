@@ -25,12 +25,13 @@ final class RequestExecutor
         $response = curl_exec($request);
         $responseCode = curl_getinfo($request, CURLINFO_HTTP_CODE);
 
-        if (self::isHttpFailureCode($responseCode))
+        if (!self::isResponseCodeSuccessful($responseCode))
         {
             //TODO: implement correct error handling procedure
             $message = ($responseCode > 0 ? "Unexpected status code " .$responseCode .": " .$response : "");
             $message .= (curl_error($request) ? curl_error($request) : "");
             $message .= " Request-URL: ".curl_getinfo($request, CURLINFO_EFFECTIVE_URL);
+
             throw new \RuntimeException($message);
         }
 
@@ -43,8 +44,8 @@ final class RequestExecutor
         return $response;
     }
     
-    private static function isHttpFailureCode($returnCode)
+    private static function isResponseCodeSuccessful($returnCode)
     {
-        return $returnCode < 200 || $returnCode >= 300;
+        return $returnCode >= 200 && $returnCode < 300;
     }
 }

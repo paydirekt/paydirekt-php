@@ -12,15 +12,20 @@
 	},
 	"require": {
 		"paragonie/random_compat": "^1.2",
-		"php": ">=5.5"
+		"php": ">=5.5",
+		"lib-curl": "*"
 	},
 	"require-dev": {
-		"lib-curl": "*",
 		"phpunit/phpunit": "~4.0"
 	},
 	"autoload": {
 		"psr-4": {
-			"Paydirekt\\Client\\": ["src/Paydirekt/Client/", "test/Paydirekt/Client/"]
+			"Paydirekt\\Client\\": ["src/Paydirekt/Client/"]
+		}
+	},
+	"autoload-dev": {
+		"psr-4": {
+			"Paydirekt\\Client\\" : ["test/Paydirekt/Client/"]
 		}
 	},
 	"scripts": {

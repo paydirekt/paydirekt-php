@@ -35,10 +35,8 @@ class HmacValidationTest extends \PHPUnit_Framework_TestCase
 
     public function testThatNonceIsInvalidWhenTooLong()
     {
-        $string = substr(str_shuffle("123456789"), 0, 65);
-
         $this->setExpectedException("InvalidArgumentException");
-        $this->invokePrivateStaticHmacMethod("validateNonce", $string);
+        $this->invokePrivateStaticHmacMethod("validateNonce", "12345678901234567890123456789012345678901234567890123456789012345");
     }
 
     public function testThatApiKeyIsValid()
