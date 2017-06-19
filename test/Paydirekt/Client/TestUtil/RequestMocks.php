@@ -106,7 +106,7 @@ class RequestMocks
                 'countryCode' => 'DE'
             ),
             'deliveryInformation' => array(
-                'expectedShippingDate' => '2016-10-19T12:00:00Z',
+                'expectedShippingDate' => '2016-10-19T12:00:00.000Z',
                 'logisticsProvider' => 'DHL',
                 'trackingNumber' => '1234567890'
             ),
@@ -160,7 +160,7 @@ class RequestMocks
             'captureInvoiceReferenceNumber' => 'invoice-1234',
             'callbackUrlStatusUpdates' => 'https://spielauto-versand.de/callback/status',
             'deliveryInformation' => array(
-                'expectedShippingDate' => '2016-10-19T12:00:00Z',
+                'expectedShippingDate' => '2016-10-19T12:00:00.000Z',
                 'logisticsProvider' => 'DHL',
                 'trackingNumber' => '1234567890'
             )
