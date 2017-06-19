@@ -44,7 +44,7 @@ class RefundIntegrationTest extends \PHPUnit_Framework_TestCase
         $this->assertCreatedRefundValid($refund, RequestMocks::refundRequest());
     }
 
-    public function testThatRetrivedRefundEqualsCreatedRefund()
+    public function testThatRetrievedRefundEqualsCreatedRefund()
     {
         $checkoutRequest = json_encode(RequestMocks::directSaleCheckoutRequest());
         $checkout = $this->testDataProvider->getApprovedCheckout($checkoutRequest);
