@@ -111,7 +111,7 @@ final class Hmac
             throw new \InvalidArgumentException("apiSecret is not base 64 url encoded");
         }
         if (strlen(Base64Url::decode($apiSecret)) < 32) {
-            throw new \InvalidArgumentException("apiSecret is not less or equal the maximum length (32): " .strlen(Base64Url::decode($apiSecret)));
+            throw new \InvalidArgumentException("apiSecret is not greater or equal the minimum length (32): " .strlen(Base64Url::decode($apiSecret)));
         }
     }
 
