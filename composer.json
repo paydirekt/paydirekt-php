@@ -11,7 +11,7 @@
 		"docs": "https://www.paydirekt.de/haendler/merchant-api.html"
 	},
 	"require": {
-		"paragonie/random_compat": "^1.2",
+		"paragonie/random_compat": "^1.2||^2.0.11",
 		"php": ">=5.5",
 		"lib-curl": "*"
 	},
